@@ -25,3 +25,4 @@ Route::post('/students', 'StudentController@store')->name('students.create');
 Route::PUT('/students/{id}', 'StudentController@update')->name('students.update');
 Route::PUT('/students/step-two/{id}', 'StudentController@updateTwo')->name('students.updateTwo');
 Route::PUT('/students/step-three/{id}', 'StudentController@updateThree')->name('students.updateThree');
+Route::POST('/students/step-four/{id}', 'StudentController@uploadFile')->name('students.uploadFile');

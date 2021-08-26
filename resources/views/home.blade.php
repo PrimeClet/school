@@ -361,91 +361,91 @@
                                             <tr>
                                                 <td>
                                                     <input type="text" class="form-control" id="ins1"
-                                                           v-model="student3.ins1">
+                                                           v-model="student3.one.ins1">
                                                 </td>
                                                 <td>
                                                     <input type="text" class="form-control" id="date1"
-                                                           v-model="student3.date1">
+                                                           v-model="student3.one.date1">
                                                 </td>
                                                 <td>
                                                     <input type="text" class="form-control" id="degree1"
-                                                           v-model="student3.degree1">
+                                                           v-model="student3.one.degree1">
                                                 </td>
                                                 <td>
                                                     <input type="text" class="form-control" id="major1"
-                                                           v-model="student3.major1">
+                                                           v-model="student3.one.major1">
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td>
                                                     <input type="text" class="form-control" id="ins2"
-                                                           v-model="student3.ins2">
+                                                           v-model="student3.two.ins2">
                                                 </td>
                                                 <td>
                                                     <input type="text" class="form-control" id="date2"
-                                                           v-model="student3.date2">
+                                                           v-model="student3.two.date2">
                                                 </td>
                                                 <td>
                                                     <input type="text" class="form-control" id="degree2"
-                                                           v-model="student3.degree2">
+                                                           v-model="student3.two.degree2">
                                                 </td>
                                                 <td>
                                                     <input type="text" class="form-control" id="major2"
-                                                           v-model="student3.major2">
+                                                           v-model="student3.two.major2">
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td>
                                                     <input type="text" class="form-control" id="ins3"
-                                                           v-model="student3.ins3">
+                                                           v-model="student3.three.ins3">
                                                 </td>
                                                 <td>
                                                     <input type="text" class="form-control" id="date3"
-                                                           v-model="student3.date3">
+                                                           v-model="student3.three.date3">
                                                 </td>
                                                 <td>
                                                     <input type="text" class="form-control" id="degree3"
-                                                           v-model="student3.degree3">
+                                                           v-model="student3.three.degree3">
                                                 </td>
                                                 <td>
                                                     <input type="text" class="form-control" id="major3"
-                                                           v-model="student3.major3">
+                                                           v-model="student3.three.major3">
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td>
                                                     <input type="text" class="form-control" id="ins4"
-                                                           v-model="student3.ins4">
+                                                           v-model="student3.four.ins4">
                                                 </td>
                                                 <td>
                                                     <input type="text" class="form-control" id="date4"
-                                                           v-model="student3.date4">
+                                                           v-model="student3.four.date4">
                                                 </td>
                                                 <td>
                                                     <input type="text" class="form-control" id="degree4"
-                                                           v-model="student3.degree4">
+                                                           v-model="student3.four.degree4">
                                                 </td>
                                                 <td>
                                                     <input type="text" class="form-control" id="major4"
-                                                           v-model="student3.major4">
+                                                           v-model="student3.four.major4">
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td>
                                                     <input type="text" class="form-control" id="ins5"
-                                                           v-model="student3.ins5">
+                                                           v-model="student3.five.ins5">
                                                 </td>
                                                 <td>
                                                     <input type="text" class="form-control" id="date5"
-                                                           v-model="student3.date5">
+                                                           v-model="student3.five.date5">
                                                 </td>
                                                 <td>
                                                     <input type="text" class="form-control" id="degree5"
-                                                           v-model="student3.degree5">
+                                                           v-model="student3.five.degree5">
                                                 </td>
                                                 <td>
                                                     <input type="text" class="form-control" id="major5"
-                                                           v-model="student3.major5">
+                                                           v-model="student3.five.major5">
                                                 </td>
                                             </tr>
                                             </tbody>
@@ -468,9 +468,32 @@
                         </form>
                     </div>
                     <div class="tab-pane fade" id="pieces" role="tabpanel" aria-labelledby="contact-tab">
+                        <form class="row g-3 p-3" enctype="multipart/form-data" @submit.prevent="uploadFile" name="fileinfo">
+                            @csrf
+                            <div class="mb-3">
+                                <label for="formFileSm" class="form-label">Baccalauréat / GCE OL</label>
+                                <input class="form-control form-control-sm" id="formFileSm" accept=".png, .jpg, .jpeg, .pdf" type="file" v-on:change="onFileChange">
+                            </div>
+                            <div class="col-12">
+                                <button type="reset" class="btn btn-danger btn-sm float-right">Cancel</button>
+                                <button type="submit" class="btn btn-success btn-sm float-right mr-3">Save</button>
+                            </div>
+                        </form>
+                        <form class="row g-3 p-3" enctype="multipart/form-data" @submit.prevent="uploadFile">
+                            @csrf
+                            <div class="mb-3">
+                                <label for="formFileSm" class="form-label">Probatoire / GCE AL</label>
+                                <input class="form-control form-control-sm" id="formFileSm" type="file" accept=".png, .jpg, .jpeg, .pdf"  v-on:change="onFileChange">
+                                <div class="col-12">
+                                    <button type="reset" class="btn btn-danger btn-sm float-right">Cancel</button>
+                                    <button type="submit" class="btn btn-success btn-sm float-right mr-3">Save</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="tab-pane fade" id="confirmation" role="tabpanel" aria-labelledby="contact-tab">
 
                     </div>
-                    <div class="tab-pane fade" id="confirmation" role="tabpanel" aria-labelledby="contact-tab">...</div>
                 </div>
 
             </div>
@@ -491,9 +514,17 @@
 
                     student: {},
 
+                    file: '',
+
                     student2: {},
 
-                    student3: {},
+                    student3: {
+                        one: {},
+                        two: {},
+                        three: {},
+                        four: {},
+                        five: {},
+                    },
 
                     student4: {
                         needs: [],
@@ -555,16 +586,52 @@
                     // }
                 },
                 updateProductThree() {
-                    // console.log(this.modif)
-                    // if (this.modif) {
                     axios.put('/students/step-three/' + {!! Auth::id() !!} , this.student3)
                         .then(function (response) {
-                            window.location = window.location
+                            if(response.data === 'Bien'){
+                                window.location = window.location
+                            }
                         })
                         .catch(function (error) {
                             console.log(error);
                         }).finally(() => this.loading = false);
-                    // }
+                },
+
+                uploadFile() {
+                    let currentObj = this;
+                    const config = {
+                        headers: {
+
+                        }
+                    }
+
+                    let form = document.forms.namedItem("fileinfo");
+                    console.log(form)
+
+                    // form data
+                    let formData = new FormData(form);
+                    // formData.append('file', this.file);
+                    let options = { content: formData };
+                    console.log(options)
+
+                    axios.post('/students/step-four/' + {!! Auth::id() !!}, options, config)
+                        .then(function (response) {
+                            console.log(response)
+                            // if(response.data === 'Bien'){
+                            //     window.location = window.location
+                            // }
+                        })
+                        .catch(function (error) {
+                            console.log(error);
+                        }).finally(() => this.loading = false);
+                },
+
+                onFileChange(e) {
+                    var files = e.target.files || e.dataTransfer.files;
+                    if (!files.length) return;
+                    this.file = files[0]
+
+                    // this.createImage(this.file);
                 },
 
                 addValue(val) {
