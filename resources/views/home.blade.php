@@ -492,7 +492,53 @@
                         </form>
                     </div>
                     <div class="tab-pane fade" id="confirmation" role="tabpanel" aria-labelledby="contact-tab">
-
+                        <h5 class="text-center mb-4 mt-3 font-weight-bolder px-4">HND & DEGREE PROGRAMS, tick the
+                            appropriate program</h5>
+                        <div class="row px-4 mx-5 ml-4">
+                            <div class="form-check col-md-12 mb-3">
+                                <input class="form-check-input" type="radio" name="pubs" id="01" value="1"
+                                       checked v-model="pubs">
+                                <label class="form-check-label" for="01">
+                                    FINISTECH WEBSITE
+                                </label>
+                            </div>
+                            <div class="form-check col-md-12 mb-3">
+                                <input class="form-check-input" type="radio" name="pubs" id="02" value="2"
+                                       v-model="pubs">
+                                <label class="form-check-label" for="02">
+                                    RADI0/TV
+                                </label>
+                            </div>
+                            <div class="form-check col-md-12 mb-3">
+                                <input class="form-check-input" type="radio" name="pubs" id="03" value="3"
+                                        v-model="pubs">
+                                <label class="form-check-label" for="03">
+                                    OTHER WEBSITE
+                                </label>
+                            </div>
+                            <div class="form-check col-md-12 mb-3">
+                                <input class="form-check-input" type="radio" name="pubs" id="04" value="4"
+                                        v-model="pubs">
+                                <label class="form-check-label" for="3">
+                                    ADVERTISEMENT
+                                </label>
+                            </div>
+                            <div class="form-check col-md-12 mb-3">
+                                <input class="form-check-input" type="radio" name="pubs" id="05" value="5"
+                                       v-model="pubs">
+                                <label class="form-check-label" for="05">
+                                    UNIVERSITY PROSPECTUS FROM FINISTECH  REPRESENTATIVE
+                                </label>
+                            </div>
+                        </div>
+                        <p class="mb-3 text-center px-5 mx-5 mt-3">
+                            I certify that all information I have provided is complete and accurate.
+                            I understand that giving false information or withholding information may
+                            make me ineligible for admission or to continue at FINISTECH
+                        </p>
+                        <div class="col-12 text-center px-5 mx-5 mt-3">
+                            <button type="submit" class="btn btn-success ">Complete Inscription</button>
+                        </div>
                     </div>
                 </div>
 
@@ -505,6 +551,8 @@
             data() {
                 return {
                     done1: true,
+
+                    pubs: '',
 
                     modif: false,
 

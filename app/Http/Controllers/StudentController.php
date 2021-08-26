@@ -59,6 +59,10 @@ class StudentController extends Controller
                 'user_id' => $id
             ]);
 
+            User::create([
+                'student_id' => count(Student::all())
+            ]);
+
             return response()->json('Product created!', 200);
         }
 

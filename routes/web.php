@@ -15,11 +15,11 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->middleware('auth');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@index')->name('home');
 Route::get('/students', 'StudentController@index')->name('students');
 Route::post('/students', 'StudentController@store')->name('students.create');
 Route::PUT('/students/{id}', 'StudentController@update')->name('students.update');
